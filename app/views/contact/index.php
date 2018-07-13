@@ -30,7 +30,58 @@ $asset = \app\assets\AppAsset::register($this);
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
 </section>
+
+<section class="page-block padding" id="contact-page-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <?= yii\easyii\modules\feedback\api\Feedback::form(['successUrl' => \yii\helpers\Url::to(['/contact']),
+                    'errorUrl' => \yii\helpers\Url::to(['/contact'])]); ?>
+
+                <div class="col-md-6 address-block">
+                    <div class="address-block-title">Адреса студії та робочі години</div>
+                    <div class="graphic">
+                        <div class="item">
+                            <div class="point"></div>
+                            <div class="text">
+                                Понеділок - П'ятниця<br>
+                                09:00 - 18:00
+                                <div class="divider"></div>
+                                Субота<br>
+                                12:00 - 15:00 
+                                <div class="divider"></div>
+                                Неділя та свята<br>
+                                Зачинено
+                                <div class="divider"></div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="point"></div>
+                            <div class="text">
+                                м. Київ<br>
+                                вул.Пожарського, 8 (біля метро Дарниця)
+                            </div>
+                        </div>
+                    </div>
+                    <div id="map-canvas" style="height: 300px;" class="col-lg-12 col-xs-12"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php
+$pageOptions = \yii\helpers\Json::encode([
+    'coordinates' => [
+        '50.453818', '30.623036'
+    ],
+    'icon' => $asset->baseUrl.'/img/marker.png',
+]);
+
+$this->registerJs("MapPage({$pageOptions});");
+?>

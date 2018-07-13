@@ -38,7 +38,7 @@ class Feedback extends \yii\easyii\components\API
         $form = ActiveForm::begin([
             'action' => Url::to(['/admin/feedback/send']),
             'options' => [
-                'class'   => 'contact-form',
+                'class'   => 'col-md-6 contact-form',
                 'enctype' => 'multipart/form-data'
             ],
             'fieldConfig' => [
@@ -49,22 +49,28 @@ class Feedback extends \yii\easyii\components\API
             ],
         ]);
 
+            echo '<div class="form-title">Заповніть контактну форму</div>';
+            echo '<div class="form-sub-title">Ми зв’яжемось з вами найближчим часом</div>';
+
             echo Html::hiddenInput('errorUrl', $options['errorUrl'] ? $options['errorUrl'] : Url::current([self::SENT_VAR => 0]));
             echo Html::hiddenInput('successUrl', $options['successUrl'] ? $options['successUrl'] : Url::current([self::SENT_VAR => 1]));
     
             echo $form->field($model, 'name')->textInput(['class' => 'form-control', 'id' => 'first-name', 'placeholder' => 'Ім\'я']);
             
-            echo $form->field($model, 'surname')->textInput(['class' => 'form-control', 'id' => 'last-name', 'placeholder' => 'Прізвище']);
+            echo $form->field($model, 'phone')->textInput(['class' => 'form-control', 'id' => 'last-name', 'placeholder' => 'Телефон']);
     
             echo $form->field($model, 'email')->input('email', ['class' => 'form-control', 'id' => 'email', 'placeholder' => 'E-mail']);
+
+            echo $form->field($model, 'client_type')->dropDownList(['jur-osoba' => 'Юридична особа',
+                'fiz-osoba' => 'Фізична особа'], ['class' => 'form-control', 'id' => 'client_type', 'placeholder' => 'Тип клієнта']);
     
             echo $form->field($model, 'text')->textarea(['class' => 'form-control', 'rows' => '7', 'placeholder' => 'Повідомлення']);
     
             if($settings['enableCaptcha']) echo $form->field($model, 'reCaptcha')->widget(ReCaptcha::className());
-    
-            echo '<div class="row"><div class="col-md-4">';
-                echo Html::submitButton('Надіслати', ['class' => 'send-message btn btn-primary btn-block btn-lg btn-fill']);
-            echo '</div></div>';
+
+            echo '<div class="button-order-container col-md-12 col-xs-12">';
+                echo Html::submitButton('Замовити', ['class' => 'button-order']);
+            echo '</div><div class="clearfix"></div>';
         
         ActiveForm::end();
 

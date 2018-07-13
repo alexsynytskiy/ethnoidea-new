@@ -29,8 +29,8 @@ class Feedback extends \yii\easyii\components\ActiveRecord
     {
         return [
             [['name', 'surname', 'email', 'text'], 'required'],
-            [['name', 'surname', 'email', 'phone', 'title', 'text'], 'trim'],
-            [['name','surname','title', 'text'], EscapeValidator::className()],
+            [['name', 'surname', 'email', 'phone', 'title', 'text', 'client_type'], 'trim'],
+            [['name','surname','title', 'text', 'client_type'], EscapeValidator::className()],
             ['title', 'string', 'max' => 128],
             ['email', 'email'],
             ['phone', 'match', 'pattern' => '/^[\d\s-\+\(\)]+$/'],
@@ -74,6 +74,7 @@ class Feedback extends \yii\easyii\components\ActiveRecord
             'answer_subject' => Yii::t('easyii/feedback', 'Subject'),
             'answer_text' => Yii::t('easyii', 'Text'),
             'phone' => Yii::t('easyii/feedback', 'Phone'),
+            'client_type' => Yii::t('easyii/feedback', 'Client type'),
             'reCaptcha' => Yii::t('easyii', 'Anti-spam check')
         ];
     }
