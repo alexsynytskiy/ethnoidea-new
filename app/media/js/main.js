@@ -20,7 +20,7 @@ $(document).ready(function () {
 
     $('.slider-1').bxSlider({
         slideWidth: 1170,
-        slideHeight: 332,
+        slideHeight: 170,
         maxSlides: 1,
         minSlides: 1,
         slideMargin: 0

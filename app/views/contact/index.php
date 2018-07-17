@@ -45,7 +45,7 @@ $asset = \app\assets\AppAsset::register($this);
 
                 <div class="col-md-6 address-block">
                     <div class="address-block-title">Адреса студії та робочі години</div>
-                    <div class="graphic">
+                    <div class="graphic clearfix">
                         <div class="item">
                             <div class="point"></div>
                             <div class="text">
@@ -68,7 +68,8 @@ $asset = \app\assets\AppAsset::register($this);
                             </div>
                         </div>
                     </div>
-                    <div id="map-canvas" style="height: 300px;" class="col-lg-12 col-xs-12"></div>
+                    <div id="map-canvas" style="height: 300px;" class="col-lg-12 col-xs-12 clearfix"></div>
+                    <div class="clearfix"></div>
                 </div>
             </div>
         </div>

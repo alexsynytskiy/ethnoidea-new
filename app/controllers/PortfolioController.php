@@ -2,8 +2,11 @@
 
 namespace app\controllers;
 
+use app\components\PublicationsQuery;
+use yii\easyii\components\helpers\CategoryHelper;
 use yii\easyii\components\helpers\LanguageHelper;
 use yii\easyii\modules\news\api\News;
+use yii\easyii\modules\page\api\Page;
 use yii\web\Controller;
 
 /**
@@ -27,10 +30,13 @@ class PortfolioController extends Controller
         \Yii::$app->seo->setDescription('Етноідея');
         \Yii::$app->seo->setKeywords('етноідея, україна');
 
-        $works = null;
+        $works = PublicationsQuery::getList([CategoryHelper::CATEGORY_PORTFOLIO]);
+
+        $block1 = Page::get(['portfolio-page-block-1']);
 
         return $this->render('index', [
             'works' => $works,
+            'block1' => $block1,
         ]);
     }
 
@@ -41,16 +47,15 @@ class PortfolioController extends Controller
      */
     public function actionView($slug = null)
     {
-        if(!$slug) {
+        if (!$slug) {
             return $this->redirect(['news/index']);
         }
 
         $work = null;
 
-        if(\Yii::$app->language != LanguageHelper::LANG_UA) {
+        if (\Yii::$app->language !== LanguageHelper::LANG_UA) {
             $work = News::get([$slug, 'en']);
-        }
-        else {
+        } else {
             $work = News::get([$slug]);
         }
 

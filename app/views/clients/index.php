@@ -154,9 +154,17 @@ $asset = \app\assets\AppAsset::register($this);
                     </li>
                     <li class="clearfix no-float"></li>
                 </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
-
-
+<section class="page-block nopadding" id="contact-page-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <?= yii\easyii\modules\feedback\api\FeedbackFull::form(['successUrl' => \yii\helpers\Url::to(['/clients']),
+                    'errorUrl' => \yii\helpers\Url::to(['/clients'])]); ?>
             </div>
         </div>
     </div>
