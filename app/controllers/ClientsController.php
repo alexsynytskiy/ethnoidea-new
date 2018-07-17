@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use yii\easyii\modules\page\api\Page;
 use yii\web\Controller;
 
 class ClientsController extends Controller
@@ -21,6 +22,12 @@ class ClientsController extends Controller
         \Yii::$app->seo->setDescription('Етноідея');
         \Yii::$app->seo->setKeywords('етноідея, україна');
 
-        return $this->render('index', []);
+        $block1 = Page::get(['clients-page-block-1']);
+        $block2 = Page::get(['clients-page-block-2']);
+
+        return $this->render('index', [
+            'block1' => $block1,
+            'block2' => $block2,
+        ]);
     }
 }

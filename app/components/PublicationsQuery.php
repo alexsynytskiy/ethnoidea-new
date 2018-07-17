@@ -20,26 +20,13 @@ class PublicationsQuery extends Object
      */
     public static function getList($category, $limit = 9)
     {
-        $works = null;
-
-        if (\Yii::$app->language !== LanguageHelper::LANG_UA) {
-            $works = News::items([
-                'limit' => $limit,
-                'language' => 'en',
-                'where' => [
-                    'category' => $category,
-                ],
-            ]);
-        } else {
-            $works = News::items([
-                'limit' => $limit,
-                'tags' => \Yii::$app->request->get('tag'),
-                'where' => [
-                    'category' => $category,
-                ],
-            ]);
-        }
-
-        return $works;
+        return News::items([
+            'limit' => $limit,
+            //'tags' => \Yii::$app->request->get('tag'),
+            'language' => \Yii::$app->language !== LanguageHelper::LANG_UA ? 'en' : 'uk',
+            'where' => [
+                'category' => $category,
+            ],
+        ]);
     }
 }

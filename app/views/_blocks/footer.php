@@ -17,8 +17,8 @@ $asset = \app\assets\AppAsset::register($this);
                                 <img src="<?= $asset->baseUrl ?>/img/insta-icon.svg">
                             </a>
                         </div>
-                        <a class="phone-number" href="tel:++380672736617">
-                            +38 067 273 66 17
+                        <a class="phone-number" href="tel:<?= trim(\yii\easyii\modules\text\api\Text::get('phone-number')) ?>">
+                            <?= \yii\easyii\modules\text\api\Text::get('phone-number') ?>
                         </a>
                     </div>
 
@@ -27,7 +27,7 @@ $asset = \app\assets\AppAsset::register($this);
                     <img class="svg" src="<?= $asset->baseUrl ?>/img/logo-white.svg">
                 </div>
                 <div class="col-md-4 rights">
-                    Всі права захищені 2018
+                    <?= \yii\easyii\modules\text\api\Text::get('rights-reserved') ?>
                 </div>
             </div>
         </div>

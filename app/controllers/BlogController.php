@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\components\PublicationsQuery;
 use yii\easyii\components\helpers\CategoryHelper;
+use yii\easyii\modules\page\api\Page;
 use yii\web\Controller;
 
 /**
@@ -29,15 +30,11 @@ class BlogController extends Controller
 
         $news = PublicationsQuery::getList([CategoryHelper::CATEGORY_NEWS]);
 
-        $showLoadMore = false;
-        if (count($news) > 6) {
-            $showLoadMore = true;
-            array_pop($news);
-        }
+        $block1 = Page::get(['blog-page-block-1']);
 
         return $this->render('index', [
             'news' => $news,
-            'showLoadMore' => $showLoadMore,
+            'block1' => $block1,
         ]);
     }
 }

@@ -989,13 +989,17 @@ article img {
     transform: rotate(180deg);
 }
 
+.bx-wrapper .bx-viewport {
+    height: 170px !important;
+}
+
 .bx-wrapper .bx-pager {
     display: none;
 }
 
 .bx-wrapper .bx-controls-direction a {
     position: absolute;
-    top: calc(50% + 10px);
+    top: 50%;
     z-index: 1;
 }
 
@@ -1005,13 +1009,9 @@ article img {
     right: 0;
 }
 
-.slider-1 {
-    height: 170px;
-}
-
 .slider-1 li {
     position: relative;
-    height: 170px;
+    height: 100px;
     width: 1170px;
 }
 
@@ -1022,7 +1022,6 @@ article img {
     left: 0;
     right: 0;
     margin: auto;
-    width: 98%;
 }
 
 .logos.big {
@@ -1176,6 +1175,32 @@ footer .phone-number {
 }
 
 @media (max-width: 991px) {
+    .contact-form.contact-form-full {
+        margin-bottom: 40px;
+    }
+
+    .portfolio-examples,
+    .content-left-fixed img:last-child,
+    #blog-page .content-left iframe:last-child {
+        margin-bottom: 0;
+    }
+
+    .page-block .title {
+        font-size: 24px;
+        line-height: 19px;
+    }
+
+    .page-block .sub-title,
+    #partners.page-block .description,
+    #clients-info .list ul li,
+    .portfolio-item .portfolio-text .description,
+    #owner-info .owner-data .position,
+    .graphic,
+    #clients-info .timeline p {
+        font-size: 16px;
+        line-height: 23px;
+    }
+
     .address-block, .contact-form {
         width: 100%;
     }
@@ -1438,6 +1463,14 @@ footer .phone-number {
 }
 
 @media (max-width: 636px) {
+    #clients-info .portfolio-item.main-page:first-child {
+    margin-bottom: 0;
+    }
+
+    .bx-wrapper .bx-viewport {
+        height: 120px !important;
+    }
+
     #partners .logos {
         margin-top: 20px;
     }
@@ -1488,10 +1521,6 @@ footer .phone-number {
         margin-right: 0 !important;
     }
 
-    #clients-info .portfolio-item:last-child {
-        margin-bottom: 0;
-    }
-
     #main-works .description-text, #clients-info .description-text {
         margin-bottom: 65px;
     }
@@ -1512,6 +1541,10 @@ footer .phone-number {
 }
 
 @media (max-width: 624px) {
+    #clients-info.clients-page .title {
+        line-height: 30px;
+    }
+
     #owner-info .description-media .media {
         margin: 0 auto;
         display: block;
