@@ -1,5 +1,7 @@
 <?php
 
+use \yii\easyii\modules\text\api\Text;
+
 $asset = \app\assets\AppAsset::register($this);
 ?>
 
@@ -10,14 +12,15 @@ $asset = \app\assets\AppAsset::register($this);
                 <div class="col-md-4 nopadding socials">
                     <div class="socials-block">
                         <div class="social-icon-pack">
-                            <a class="social-icon" href="/">
+                            <a class="social-icon" href="<?= Text::get('facebook-link') ?>">
                                 <img src="<?= $asset->baseUrl ?>/img/fb-icon.svg">
                             </a>
-                            <a class="social-icon" href="/">
+                            <a class="social-icon" href="<?= Text::get('instagram-link') ?>">
                                 <img src="<?= $asset->baseUrl ?>/img/insta-icon.svg">
                             </a>
                         </div>
-                        <a class="phone-number" href="tel:<?= trim(\yii\easyii\modules\text\api\Text::get('phone-number')) ?>">
+                        <a class="phone-number"
+                           href="tel:<?= trim(\yii\easyii\modules\text\api\Text::get('phone-number')) ?>">
                             <?= \yii\easyii\modules\text\api\Text::get('phone-number') ?>
                         </a>
                     </div>
@@ -27,7 +30,7 @@ $asset = \app\assets\AppAsset::register($this);
                     <img class="svg" src="<?= $asset->baseUrl ?>/img/logo-white.svg">
                 </div>
                 <div class="col-md-4 rights">
-                    <?= \yii\easyii\modules\text\api\Text::get('rights-reserved') ?>
+                    <?= Text::get('rights-reserved') ?>
                 </div>
             </div>
         </div>

@@ -936,10 +936,15 @@ article img {
     position: absolute;
     left: 0;
     top: 0;
-    border: 4px solid #e9414d;
-    border-radius: 10px;
     height: 30px;
     width: 30px;
+    background: url(/app/media/img/place.svg) no-repeat;
+    background-size: 30px 30px;
+}
+
+.graphic .item .point.time {
+    background: url(/app/media/img/time.svg) no-repeat;
+    background-size: 30px 30px;
 }
 
 .bx-prev img, .bx-next img {

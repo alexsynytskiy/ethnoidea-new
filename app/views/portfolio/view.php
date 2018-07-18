@@ -1,5 +1,5 @@
 <?php
-/* @var $work yii\easyii\modules\news\api\News */
+/* @var $work yii\easyii\modules\news\api\NewsObject */
 
 $asset = \app\assets\AppAsset::register($this);
 ?>

@@ -8,6 +8,10 @@ use yii\easyii\modules\gallery\api\Gallery;
 use yii\easyii\modules\page\api\Page;
 use yii\web\Controller;
 
+/**
+ * Class SiteController
+ * @package app\controllers
+ */
 class SiteController extends Controller
 {
     public function actions()
@@ -19,6 +23,9 @@ class SiteController extends Controller
         ];
     }
 
+    /**
+     * @return string
+     */
     public function actionIndex()
     {
         \Yii::$app->seo->setTitle('Головна');

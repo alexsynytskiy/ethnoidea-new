@@ -1,18 +1,19 @@
 <?php
-use \yii\helpers\Url;
+
+use yii\helpers\Url;
 
 $asset = \app\assets\AppAsset::register($this);
 
 
 $currentPage = Yii::$app->controller->action->id;
-$controller  = Yii::$app->controller->id;
+$controller = Yii::$app->controller->id;
 
-$contact  = '';
+$contact = '';
 $portfolio = '';
 $clients = '';
 $blog = '';
 
-switch($controller) {
+switch ($controller) {
     case 'portfolio':
         $portfolio = "active";
         break;
@@ -31,7 +32,8 @@ switch($controller) {
 <nav id="main-menu" class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="100">
     <div class="container">
         <div class="navbar-header">
-            <button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
+            <button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed"
+                    data-target="#navbar" data-toggle="collapse" type="button">
                 <div class="navbar-mobile-rows">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>

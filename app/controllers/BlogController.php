@@ -22,6 +22,9 @@ class BlogController extends Controller
         ];
     }
 
+    /**
+     * @return string
+     */
     public function actionIndex()
     {
         \Yii::$app->seo->setTitle("Новини");

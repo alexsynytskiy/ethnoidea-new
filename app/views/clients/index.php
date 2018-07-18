@@ -24,7 +24,8 @@ $asset = \app\assets\AppAsset::register($this);
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <?= yii\easyii\modules\feedback\api\FeedbackFull::form(['successUrl' => \yii\helpers\Url::to(['/clients']),
+                <?= yii\easyii\modules\feedback\api\FeedbackFull::form([
+                    'successUrl' => \yii\helpers\Url::to(['/clients']),
                     'errorUrl' => \yii\helpers\Url::to(['/clients'])]); ?>
             </div>
         </div>
