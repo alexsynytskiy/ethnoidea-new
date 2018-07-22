@@ -12,6 +12,9 @@ class TypeHelper
     const JUR_OSOBA = 'jur-osoba';
     const FIZ_OSOBA = 'fiz-osoba';
 
+    const TYPE_1 = 'type_1';
+    const TYPE_2 = 'type_2';
+
     /**
      * Parse list array and return required data for incoming option
      *
@@ -46,7 +49,38 @@ class TypeHelper
             self::FIZ_OSOBA => 'Фізична особа',
         ];
 
-        return $statuses[$key];
+        return isset($statuses[$key]) ? $statuses[$key] : null;
+    }
+
+    /**
+     * @param string $key
+     * @return mixed
+     */
+    public static function getValueOrder($key)
+    {
+        $statuses = [
+            self::TYPE_1 => 'Тип 1',
+            self::TYPE_2 => 'Тип 2',
+        ];
+
+        return isset($statuses[$key]) ? $statuses[$key] : null;
+    }
+
+    /**
+     * @param string $returnType
+     *
+     * @see BaseDefinition::getListDataByReturnType()
+     *
+     * @return array
+     */
+    public static function getListOrders($returnType = 'key-value')
+    {
+        $statuses = [
+            self::TYPE_1 => 'Тип 1',
+            self::TYPE_2 => 'Тип 2',
+        ];
+
+        return static::getListDataByReturnType($statuses, $returnType);
     }
 
     /**

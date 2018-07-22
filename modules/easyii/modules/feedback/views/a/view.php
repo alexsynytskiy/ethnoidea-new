@@ -29,7 +29,7 @@ if ($model->status === Feedback::STATUS_ANSWERED) {
     <dd><?= \yii\easyii\helpers\TypeHelper::getValue($model->client_type) ?></dd>
 
     <dt>Тип замовлення</dt>
-    <dd><?= $model->order_type ?></dd>
+    <dd><?= \yii\easyii\helpers\TypeHelper::getValueOrder($model->order_type) ?></dd>
 
     <dt>Місце</dt>
     <dd><?= $model->place ?></dd>

@@ -67,10 +67,9 @@ class FeedbackFull extends \yii\easyii\components\API
                 echo $form->field($model, 'client_type')->dropDownList(TypeHelper::getListRules(),
                     ['class' => 'form-control', 'id' => 'client_type', 'placeholder' => 'Тип клієнта']);
 
-                echo $form->field($model, 'order_type')->dropDownList(['type_1' => 'Тип 1',
-                    'type_2' => 'Тип 2'], ['class' => 'form-control', 'id' => 'order_type', 'placeholder' => 'Тип замовлення']);
+                echo $form->field($model, 'order_type')->dropDownList(TypeHelper::getListOrders(), ['class' => 'form-control', 'id' => 'order_type', 'placeholder' => 'Тип замовлення']);
 
-                echo $form->field($model, 'date')->widget(DateTimePicker::className());
+                echo $form->field($model, 'date')->textInput(['class' => 'form-control', 'id' => 'date', 'placeholder' => 'Дата (завершення події/проекту)']);
 
                 echo $form->field($model, 'place')->textInput(['class' => 'form-control', 'id' => 'place', 'placeholder' => 'Місце події/проекту']);
 

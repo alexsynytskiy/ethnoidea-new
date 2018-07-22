@@ -1,20 +1,19 @@
 <?php
 namespace yii\easyii\assets;
 
-class AdminAsset extends \yii\web\AssetBundle
+class IndexAsset extends \yii\web\AssetBundle
 {
     public $sourcePath = '@easyii/media';
     public $css = [
-        'css/admin.css',
-        'css/adminCustom.css',
+        'css/chartjs-visualizations.css',
     ];
     public $js = [
-        'js/admin.js',
+        'js/view-selector2.js',
+        'js/date-range-selector.js',
+        'js/active-users.js',
     ];
     public $depends = [
-        'yii\web\JqueryAsset',
-        'yii\bootstrap\BootstrapAsset',
-        'yii\easyii\assets\SwitcherAsset',
+        'yii\easyii\assets\AdminAsset',
     ];
     public $jsOptions = array(
         'position' => \yii\web\View::POS_HEAD

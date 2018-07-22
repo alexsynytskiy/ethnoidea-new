@@ -382,7 +382,7 @@ article img {
 .page-block .sub-title {
     font-size: 18px;
     margin-bottom: 40px;
-    line-height: 24px;
+    line-height: 28px;
 }
 
 #main-about .description-media {
@@ -527,6 +527,7 @@ article img {
 .portfolio-item .portfolio-text {
     padding: 25px;
     background-color: #fff;
+    min-height: 156px;
 }
 
 .portfolio-item .portfolio-text a.title {
@@ -577,7 +578,7 @@ article img {
     padding-bottom: 25px;
     font-size: 18px;
     font-family: 'rubik_regular';
-    line-height: 23px;
+    line-height: 28px;
     padding-left: 27px;
 }
 
@@ -643,7 +644,7 @@ article img {
 #partners.page-block .description {
     margin: 0 auto 50px;
     font-size: 18px;
-    line-height: 24px;
+    line-height: 28px;
     font-family: 'rubik_regular';
     max-width: 550px;
     text-align: center;
@@ -724,7 +725,7 @@ article img {
 
 .sidebar-right-fixed .description {
     font-size: 18px;
-    line-height: 24px;
+    line-height: 28px;
     padding-left: 12px;
     margin: 20px 0 35px;
 }
@@ -809,9 +810,12 @@ article img {
     margin-top: 195px;
 }
 
-.timeline > li:nth-child(3),
+.timeline > li:nth-child(3) {
+    margin-top: 130px;
+}
+
 .timeline > li:nth-child(5) {
-    margin-top: 170px;
+    margin-top: 160px;
 }
 
 .timeline > li:nth-child(4) {
@@ -819,10 +823,13 @@ article img {
 }
 
 .timeline > li:nth-child(6) {
-    margin-top: 205px;
+    margin-top: 190px;
 }
 
-.timeline > li:nth-child(7),
+.timeline > li:nth-child(7) {
+    margin-top: 190px;
+}
+
 .timeline > li:nth-child(8) {
     margin-top: 210px;
 }
@@ -848,6 +855,7 @@ article img {
 .form-control {
     border: none;
     border-bottom: 1px solid #F5F5F6;
+    font-size: 18px;
 }
 
 .form-control:focus {
@@ -859,6 +867,17 @@ article img {
     padding: 15px;
     border: 3px solid #F5F5F6;
     margin: 40px 0;
+}
+
+#clients-info .portfolio-item.main-page .header {
+    display: table;
+    width: 100%;
+    padding: 0;
+}
+
+#clients-info .portfolio-item.main-page .title {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .contact-form.contact-form-full {
@@ -900,6 +919,10 @@ article img {
 
 .contact-form .button-order-container {
     text-align: center;
+}
+
+#map-canvas {
+    height: 335px;
 }
 
 .address-block {
@@ -1031,6 +1054,10 @@ article img {
 
 .logos.big {
     margin-bottom: 60px;
+}
+
+#blog-page iframe {
+    max-width: 658px !important;
 }
 
 article {
@@ -1180,6 +1207,10 @@ footer .phone-number {
 }
 
 @media (max-width: 991px) {
+    .form-control {
+        font-size: 16px;
+    }
+
     .contact-form.contact-form-full {
         margin-bottom: 40px;
     }
@@ -1469,11 +1500,16 @@ footer .phone-number {
 
 @media (max-width: 636px) {
     #clients-info .portfolio-item.main-page:first-child {
-    margin-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .bx-wrapper .bx-controls-direction a {
+        position: absolute;
+        top: calc(50% - 10px);
     }
 
     .bx-wrapper .bx-viewport {
-        height: 120px !important;
+        height: 140px !important;
     }
 
     #partners .logos {

@@ -26,7 +26,7 @@ class ContactController extends Controller
     public function actionIndex()
     {
         \Yii::$app->seo->setTitle("Контакти");
-        \Yii::$app->seo->setDescription('Фундація З країни в Україну - ми робимо країну краще');
+        \Yii::$app->seo->setDescription('Етноідея');
         \Yii::$app->seo->setKeywords('фундація, україна');
 
         $block1 = Page::get(['contact-page-block-1']);

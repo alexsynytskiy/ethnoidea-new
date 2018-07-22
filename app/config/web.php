@@ -66,7 +66,6 @@ $config = [
         ],
         'urlManager' => [
             'rules' => [
-                'team/'                              => 'site/team',
                 '<controller:\w+>/'                  => '<controller>/index',
                 '<controller:\w+>/<slug:[\w-]+>'     => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/'     => '<controller>/<action>',

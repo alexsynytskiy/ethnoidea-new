@@ -14,4 +14,4 @@
 <!-- Favicon and Apple Touch Icon -->
 <link rel="shortcut icon" href="<?= $asset->baseUrl ?>/img/logo.svg" type="image/x-icon">
 
-<script src="https://maps.googleapis.com/maps/ainstagram-linkpi/js?key=AIzaSyDpVcxjCQWKJb952npbOD5hGSo8qyJ5UTE"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpVcxjCQWKJb952npbOD5hGSo8qyJ5UTE"></script>

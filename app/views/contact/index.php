@@ -28,7 +28,7 @@ $baseUrl = $asset->baseUrl;
 
                 <div class="col-md-6 address-block">
                     <?= $block2->text ?>
-                    <div id="map-canvas" style="height: 300px;" class="col-lg-12 col-xs-12 clearfix"></div>
+                    <div id="map-canvas" class="col-lg-12 col-xs-12 clearfix"></div>
                     <div class="clearfix"></div>
                 </div>
             </div>

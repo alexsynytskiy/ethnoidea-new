@@ -17,7 +17,7 @@ $module = $this->context->module->id;
 <?= $this->render('_menu') ?>
 
 <?php if ($dataNews->count > 0) : ?>
-    Новини
+    Посты блога
     <table class="table table-hover">
         <thead>
         <tr>
@@ -73,7 +73,7 @@ $module = $this->context->module->id;
 
 
 <?php if ($dataPortfolio->count > 0) : ?>
-    Блог
+    Портфолио
     <table class="table table-hover">
         <thead>
         <tr>

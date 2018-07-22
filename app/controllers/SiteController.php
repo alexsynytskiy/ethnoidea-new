@@ -38,7 +38,10 @@ class SiteController extends Controller
         $block4 = Page::get(['main-page-block-4']);
         $block5 = Page::get(['main-page-block-5']);
 
-        $portfolioExamples = PublicationsQuery::getList([CategoryHelper::CATEGORY_PORTFOLIO], 2);
+        $portfolioExamples = PublicationsQuery::getList([
+            CategoryHelper::CATEGORY_PORTFOLIO],
+            2,
+            ['on_main' => 1]);
 
         $partners = [];
         $gallery = Gallery::cat('partners');

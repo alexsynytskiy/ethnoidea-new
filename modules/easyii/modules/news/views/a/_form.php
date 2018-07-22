@@ -1,15 +1,13 @@
 <?php
 /** @var $model yii\easyii\modules\news\models\News */
 
-use yii\easyii\widgets\DateTimePicker;
 use yii\easyii\helpers\Image;
-use yii\easyii\widgets\TagsInput;
+use yii\easyii\widgets\DateTimePicker;
+use yii\easyii\widgets\Redactor;
+use yii\easyii\widgets\SeoForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
-use yii\easyii\widgets\Redactor;
-use yii\easyii\widgets\SeoForm;
-use \yii\easyii\components\helpers\LanguageHelper;
 
 $module = $this->context->module->id;
 ?>
@@ -19,20 +17,27 @@ $module = $this->context->module->id;
     'options' => ['enctype' => 'multipart/form-data', 'class' => 'model-form']
 ]); ?>
 
-<?= $form->field($model, 'category')->widget(\kartik\select2\Select2::className(), [
-    'data'     => \yii\easyii\components\helpers\CategoryHelper::getCategories(),
-    'language' => Yii::$app->language,
-    'options'  => ['placeholder' => Yii::t('easyii', 'No')],
-    'pluginOptions' => [
-        'allowClear' => true
-    ],
-]); ?>
+    <div class="col-md-12">
+        <div class="col-md-6">
+            <?= $form->field($model, 'category')->widget(\kartik\select2\Select2::className(), [
+                'data' => \yii\easyii\components\helpers\CategoryHelper::getCategories(),
+                'language' => Yii::$app->language,
+                'options' => ['placeholder' => Yii::t('easyii', 'No')],
+                'pluginOptions' => [
+                    'allowClear' => true
+                ],
+            ]); ?>
+        </div>
+        <div class="col-md-6" style="margin-top: 20px;">
+            <?= $form->field($model, 'on_main')->checkbox() ?>
+        </div>
+    </div>
 
 <?= $form->field($model, 'title') ?>
 
 <?= $form->field($model, 'short')->textarea() ?>
 
-<?= $form->field($model, 'text')->widget(Redactor::className(),[
+<?= $form->field($model, 'text')->widget(Redactor::className(), [
     'options' => [
         'minHeight' => 400,
         'imageUpload' => Url::to(['/admin/redactor/upload', 'dir' => 'news']),
@@ -41,8 +46,8 @@ $module = $this->context->module->id;
     ]
 ]) ?>
 
-<?php if(!$model->isNewRecord && $model->category === \yii\easyii\components\helpers\CategoryHelper::CATEGORY_PORTFOLIO) : ?>
-    <?php if($this->context->module->settings['enableThumb']) : ?>
+<?php if (!$model->isNewRecord && $model->category === \yii\easyii\components\helpers\CategoryHelper::CATEGORY_PORTFOLIO) : ?>
+    <?php if ($this->context->module->settings['enableThumb']) : ?>
         <?= $form->field($model, 'image')->widget(\kartik\file\FileInput::className(), [
             'options' => [
                 'accept' => 'image/*'
@@ -50,12 +55,12 @@ $module = $this->context->module->id;
             'pluginOptions' => [
                 'showRemove' => false,
                 'initialPreview' => [
-                    (isset($model->image)) ? Image::thumb($model->image, 240) : null
+                    isset($model->image) ? Image::thumb($model->image, 240) : null
                 ],
                 'initialPreviewAsData' => true,
                 'initialPreviewConfig' => [
                     [
-                        'url' => Url::to(['/admin/'.$module.'/a/clear-image', 'id' => $model->primaryKey]),
+                        'url' => Url::to(['/admin/' . $module . '/a/clear-image', 'id' => $model->primaryKey]),
                     ],
                 ],
             ]
@@ -65,7 +70,7 @@ $module = $this->context->module->id;
 
 <?= $form->field($model, 'time')->widget(DateTimePicker::className()); ?>
 
-<?php if(IS_ROOT) : ?>
+<?php if (IS_ROOT) : ?>
     <?= $form->field($model, 'slug') ?>
     <?= SeoForm::widget(['model' => $model]) ?>
 <?php endif; ?>
