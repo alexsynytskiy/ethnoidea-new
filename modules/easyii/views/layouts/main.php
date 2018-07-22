@@ -32,7 +32,7 @@ $moduleName = $this->context->module->id;
         <div class="wrapper">
             <div class="header">
                 <div class="logo">
-                    <img src="<?= $asset->baseUrl ?>/img/logo-white.svg">
+                    <a href="/admin"><img src="<?= $asset->baseUrl ?>/img/logo-white.svg"></a>
                 </div>
                 <div class="nav">
                     <a href="<?= Url::to(['/admin/sign/out']) ?>" class="pull-right"><i class="glyphicon glyphicon-log-out"></i> <?= Yii::t('easyii', 'Logout') ?></a>
