@@ -2,6 +2,7 @@
 namespace yii\easyii\modules\feedback\api;
 
 use Yii;
+use yii\easyii\helpers\TypeHelper;
 use yii\easyii\modules\feedback\models\Feedback as FeedbackModel;
 
 use yii\helpers\Html;
@@ -61,8 +62,8 @@ class Feedback extends \yii\easyii\components\API
     
             echo $form->field($model, 'email')->input('email', ['class' => 'form-control', 'id' => 'email', 'placeholder' => 'E-mail']);
 
-            echo $form->field($model, 'client_type')->dropDownList(['jur-osoba' => 'Юридична особа',
-                'fiz-osoba' => 'Фізична особа'], ['class' => 'form-control', 'id' => 'client_type', 'placeholder' => 'Тип клієнта']);
+            echo $form->field($model, 'client_type')->dropDownList(TypeHelper::getListRules(),
+                ['class' => 'form-control', 'id' => 'client_type', 'placeholder' => 'Тип клієнта']);
     
             echo $form->field($model, 'text')->textarea(['class' => 'form-control', 'rows' => '7', 'placeholder' => 'Повідомлення']);
     

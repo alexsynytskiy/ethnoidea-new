@@ -8,8 +8,11 @@ use yii\easyii\widgets\SeoForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
+use \yii\easyii\components\helpers\CategoryHelper;
 
 $module = $this->context->module->id;
+
+$asset = \yii\easyii\modules\news\assets\NewsAsset::register($this);
 ?>
 
 <?php $form = ActiveForm::begin([
@@ -20,7 +23,7 @@ $module = $this->context->module->id;
     <div class="col-md-12">
         <div class="col-md-6">
             <?= $form->field($model, 'category')->widget(\kartik\select2\Select2::className(), [
-                'data' => \yii\easyii\components\helpers\CategoryHelper::getCategories(),
+                'data' => CategoryHelper::getCategories(),
                 'language' => Yii::$app->language,
                 'options' => ['placeholder' => Yii::t('easyii', 'No')],
                 'pluginOptions' => [
@@ -28,14 +31,18 @@ $module = $this->context->module->id;
                 ],
             ]); ?>
         </div>
-        <div class="col-md-6" style="margin-top: 20px;">
+        <div class="col-md-6" id="to-main-page">
             <?= $form->field($model, 'on_main')->checkbox() ?>
         </div>
     </div>
 
-<?= $form->field($model, 'title') ?>
+    <div class="col-md-12" id="title">
+        <?= $form->field($model, 'title') ?>
+    </div>
 
-<?= $form->field($model, 'short')->textarea() ?>
+    <div class="col-md-12" id="short">
+        <?= $form->field($model, 'short')->textarea() ?>
+    </div>
 
 <?= $form->field($model, 'text')->widget(Redactor::className(), [
     'options' => [
@@ -68,7 +75,7 @@ $module = $this->context->module->id;
     <?php endif; ?>
 <?php endif; ?>
 
-<?= $form->field($model, 'time')->widget(DateTimePicker::className()); ?>
+    <?= $form->field($model, 'time')->widget(DateTimePicker::className()); ?>
 
 <?php if (IS_ROOT) : ?>
     <?= $form->field($model, 'slug') ?>
@@ -77,3 +84,13 @@ $module = $this->context->module->id;
 
 <?= Html::submitButton(Yii::t('easyii', 'Save'), ['class' => 'btn btn-primary']) ?>
 <?php ActiveForm::end(); ?>
+
+<?php
+$pageOptions = \yii\helpers\Json::encode([
+    'types' => [
+        CategoryHelper::getCategoriesValues(),
+    ],
+]);
+
+$this->registerJs("PublicationPage({$pageOptions});");
+?>

@@ -631,6 +631,7 @@ article img {
 
 #partners {
     padding-bottom: 0;
+    overflow: hidden;
 }
 
 #partners.page-block .title {
@@ -696,6 +697,10 @@ article img {
 }
 
 .sidebar-right-fixed-bottom-big {
+    top: 32px !important;
+}
+
+#blog-page .sidebar-right-fixed-bottom-big {
     top: 12px !important;
 }
 
@@ -732,8 +737,9 @@ article img {
 
 .sidebar-right-fixed .portfolio-item {
     width: 94%;
-    margin-left: 12px;
-    margin-bottom: 12px;
+    margin-left: 11px;
+    margin-bottom: 15px;
+    box-shadow: 0 0px 21px #e4e4e4;
 }
 
 .sidebar-right-fixed .portfolio-item .button-order {

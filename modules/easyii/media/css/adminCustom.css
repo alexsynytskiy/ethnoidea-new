@@ -36,3 +36,12 @@
     margin-right: 5px;
     height: 12px;
 }
+
+#to-main-page {
+    display: none;
+    margin-top: 20px;
+}
+
+#short {
+    display: none;
+}

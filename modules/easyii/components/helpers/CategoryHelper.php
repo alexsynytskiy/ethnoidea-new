@@ -24,4 +24,15 @@ class CategoryHelper
             self::CATEGORY_PORTFOLIO => 'Портфолио',
         ];
     }
+
+    /**
+     * @return array
+     */
+    public static function getCategoriesValues()
+    {
+        return [
+            self::CATEGORY_NEWS,
+            self::CATEGORY_PORTFOLIO,
+        ];
+    }
 }

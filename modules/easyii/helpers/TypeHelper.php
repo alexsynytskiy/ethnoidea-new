@@ -12,8 +12,14 @@ class TypeHelper
     const JUR_OSOBA = 'jur-osoba';
     const FIZ_OSOBA = 'fiz-osoba';
 
-    const TYPE_1 = 'type_1';
-    const TYPE_2 = 'type_2';
+    const TYPE_CORPORATE = 'corporate';
+    const TYPE_WEDDING = 'wedding';
+    const TYPE_PHOTO = 'photo';
+    const TYPE_NEW_YEAR = 'new-year';
+    const TYPE_GREENING = 'greening';
+    const TYPE_ADS = 'ads';
+    const TYPE_PHOTO_ZONE = 'photo-zone';
+    const TYPE_OTHER = 'other';
 
     /**
      * Parse list array and return required data for incoming option
@@ -42,25 +48,17 @@ class TypeHelper
      * @param string $key
      * @return mixed
      */
-    public static function getValue($key)
-    {
-        $statuses = [
-            self::JUR_OSOBA => 'Юридична особа',
-            self::FIZ_OSOBA => 'Фізична особа',
-        ];
-
-        return isset($statuses[$key]) ? $statuses[$key] : null;
-    }
-
-    /**
-     * @param string $key
-     * @return mixed
-     */
     public static function getValueOrder($key)
     {
         $statuses = [
-            self::TYPE_1 => 'Тип 1',
-            self::TYPE_2 => 'Тип 2',
+            self::TYPE_CORPORATE => 'Корпоратив',
+            self::TYPE_WEDDING => 'Весілля',
+            self::TYPE_PHOTO => 'Фотозйомка',
+            self::TYPE_NEW_YEAR => 'Новий Рік',
+            self::TYPE_GREENING => 'Озеленення',
+            self::TYPE_ADS => 'Реклама',
+            self::TYPE_PHOTO_ZONE => 'Фотозона',
+            self::TYPE_OTHER => 'Інше',
         ];
 
         return isset($statuses[$key]) ? $statuses[$key] : null;
@@ -76,11 +74,31 @@ class TypeHelper
     public static function getListOrders($returnType = 'key-value')
     {
         $statuses = [
-            self::TYPE_1 => 'Тип 1',
-            self::TYPE_2 => 'Тип 2',
+            self::TYPE_CORPORATE => 'Корпоратив',
+            self::TYPE_WEDDING => 'Весілля',
+            self::TYPE_PHOTO => 'Фотозйомка',
+            self::TYPE_NEW_YEAR => 'Новий Рік',
+            self::TYPE_GREENING => 'Озеленення',
+            self::TYPE_ADS => 'Реклама',
+            self::TYPE_PHOTO_ZONE => 'Фотозона',
+            self::TYPE_OTHER => 'Інше',
         ];
 
         return static::getListDataByReturnType($statuses, $returnType);
+    }
+
+    /**
+     * @param string $key
+     * @return mixed
+     */
+    public static function getValue($key)
+    {
+        $statuses = [
+            self::JUR_OSOBA => 'Юридична особа',
+            self::FIZ_OSOBA => 'Фізична особа',
+        ];
+
+        return isset($statuses[$key]) ? $statuses[$key] : null;
     }
 
     /**

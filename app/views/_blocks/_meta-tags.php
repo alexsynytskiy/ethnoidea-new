@@ -12,6 +12,6 @@
 <title><?= $this->title ?></title>
 
 <!-- Favicon and Apple Touch Icon -->
-<link rel="shortcut icon" href="<?= $asset->baseUrl ?>/img/logo.svg" type="image/x-icon">
+<link rel="shortcut icon" href="<?= $asset->baseUrl ?>/img/favicon.png" type="image/x-icon">
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpVcxjCQWKJb952npbOD5hGSo8qyJ5UTE"></script>
