@@ -27,10 +27,12 @@ class ClientsController extends Controller
 
         $block1 = Page::get(['clients-page-block-1']);
         $block2 = Page::get(['clients-page-block-2']);
+        $block3 = Page::get(['clients-page-block-3']);
 
         return $this->render('index', [
             'block1' => $block1,
             'block2' => $block2,
+            'block3' => $block3,
         ]);
     }
 }

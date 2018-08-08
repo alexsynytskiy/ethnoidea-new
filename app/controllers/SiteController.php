@@ -35,7 +35,6 @@ class SiteController extends Controller
         $block1 = Page::get(['main-page-block-1']);
         $block2 = Page::get(['main-page-block-2']);
         $block3 = Page::get(['main-page-block-3']);
-        $block4 = Page::get(['main-page-block-4']);
         $block5 = Page::get(['main-page-block-5']);
 
         $portfolioExamples = PublicationsQuery::getList([
@@ -55,7 +54,6 @@ class SiteController extends Controller
             'block1' => $block1,
             'block2' => $block2,
             'block3' => $block3,
-            'block4' => $block4,
             'block5' => $block5,
             'partners' => $partners,
         ]);

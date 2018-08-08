@@ -8,6 +8,8 @@ $asset = \app\assets\AppAsset::register($this);
 
 $baseUrl = $asset->baseUrl;
 ?>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpVcxjCQWKJb952npbOD5hGSo8qyJ5UTE"></script>
+
 <section  style="padding-top: 100px;"></section>
 <section class="page-block padding" id="owner-info">
     <div class="container">

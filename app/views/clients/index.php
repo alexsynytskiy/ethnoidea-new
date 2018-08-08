@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 /* @var $block1 \yii\easyii\modules\page\api\PageObject */
 /* @var $block2 \yii\easyii\modules\page\api\PageObject */
+/* @var $block3 \yii\easyii\modules\page\api\PageObject */
 
 $asset = \app\assets\AppAsset::register($this);
 ?>
@@ -27,7 +28,19 @@ $asset = \app\assets\AppAsset::register($this);
                 <?= yii\easyii\modules\feedback\api\FeedbackFull::form([
                     'successUrl' => \yii\helpers\Url::to(['/clients']),
                     'errorUrl' => \yii\helpers\Url::to(['/clients'])]); ?>
+
+                <div id="clients-info" class="clients-page-form-full">
+                    <div class="col-md-6 col-xs-12 portfolio-examples nopadding">
+                        <div class="col-md-12 col-xs-12 portfolio-item item-full nopadding main-page">
+                            <?= $block3->text ?>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+
+
+

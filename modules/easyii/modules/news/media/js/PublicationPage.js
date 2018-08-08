@@ -10,11 +10,7 @@ var PublicationPage = function (options) {
         short: '#short'
     };
 
-    $('body').on("change", selectors.newsCategory, function (e) {
-        e.preventDefault();
-
-        var value = $(this).val();
-
+    function setFields(value) {
         if(value === pageOptions.types[0][0]) {
             $(selectors.toMainPage).hide();
             $(selectors.short).hide();
@@ -23,5 +19,13 @@ var PublicationPage = function (options) {
             $(selectors.toMainPage).show();
             $(selectors.short).show();
         }
+    }
+
+    setFields($(selectors.newsCategory).val());
+
+    $('body').on("change", selectors.newsCategory, function (e) {
+        e.preventDefault();
+
+        setFields($(this).val());
     });
 };

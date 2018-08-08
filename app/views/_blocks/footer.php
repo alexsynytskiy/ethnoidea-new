@@ -29,7 +29,7 @@ $asset = \app\assets\AppAsset::register($this);
                 <div class="col-md-4 footer-logo">
                     <img class="svg" src="<?= $asset->baseUrl ?>/img/logo-white.svg">
                 </div>
-                <div class="col-md-4 rights">
+                <div class="col-md-4 rights nopadding">
                     <?= Text::get('rights-reserved') ?>
                 </div>
             </div>

@@ -66,6 +66,11 @@ class PortfolioController extends Controller
         isset($work->seo->description) ? \Yii::$app->seo->setDescription($work->seo->description) : null;
         isset($work->seo->keywords) ? \Yii::$app->seo->setKeywords($work->seo->keywords) : null;
 
-        return $this->render('view', ['work' => $work]);
+        $block1 = Page::get(['portfolio-page-view-block-1']);
+
+        return $this->render('view', [
+            'work' => $work,
+            'block1' => $block1,
+        ]);
     }
 }

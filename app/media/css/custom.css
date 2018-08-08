@@ -11,7 +11,12 @@
 }
 
 body {
+    color: #000;
     font-family: 'rubik_regular';
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: #000;
 }
 
 .clearfix:after {
@@ -32,6 +37,7 @@ body {
     padding: 0;
     margin: 0;
     box-shadow: 0 0 21px #e4e4e4;
+    background-color: #fff;
 }
 
 #main-menu .navbar-brand {
@@ -105,7 +111,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .affix {
-    background-color: rgba(255, 255, 255, 0.8) !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -379,6 +385,10 @@ article img {
     line-height: 39px;
 }
 
+body .page-block .title.small {
+    font-size: 30px;
+}
+
 .page-block .sub-title {
     font-size: 18px;
     margin-bottom: 40px;
@@ -459,7 +469,6 @@ article img {
     font-family: 'rubik_medium';
     color: #000;
     font-size: 30px;
-    margin-bottom: 20px;
 }
 
 #owner-info .owner-data .position {
@@ -527,7 +536,7 @@ article img {
 .portfolio-item .portfolio-text {
     padding: 25px;
     background-color: #fff;
-    min-height: 156px;
+    min-height: 166px;
 }
 
 .portfolio-item .portfolio-text a.title {
@@ -543,8 +552,17 @@ article img {
     transition: all ease 0.5s;
 }
 
-.portfolio-item .portfolio-text a.title:hover, footer a.phone-number:hover {
+.portfolio-item .portfolio-text a.title:hover {
     color: #e9414d;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+}
+
+footer a.phone-number:hover {
+    opacity: 0.8;
     -webkit-transition: all ease 0.5s;
     -moz-transition: all ease 0.5s;
     -o-transition: all ease 0.5s;
@@ -555,6 +573,7 @@ article img {
 .portfolio-item .portfolio-text .description {
     font-size: 18px;
     line-height: 25px;
+    margin-top: 10px;
 }
 
 .portfolio-text .header {
@@ -696,8 +715,16 @@ article img {
     overflow-x: hidden;
 }
 
-.sidebar-right-fixed-bottom-big {
-    top: 32px !important;
+#portfolio-item-page .sidebar-right-fixed-bottom-big {
+    top: 243px !important;
+}
+
+#portfolio-item-page .sidebar-right-fixed .portfolio-item {
+    margin-top: 12px;
+}
+
+#portfolio-item-pagearticle {
+    padding-top: 17px;
 }
 
 #blog-page .sidebar-right-fixed-bottom-big {
@@ -708,16 +735,19 @@ article img {
     top: -12px !important;
 }
 
-.sidebar-right-fixed h2 {
+.sidebar-right-fixed h2, 
+.content-left-fixed h2 {
     margin-bottom: 15px;
     font-family: 'rubik_medium';
     font-size: 30px;
     line-height: 45px;
     margin-top: 0;
     padding-left: 12px;
+    font-weight: 300;
 }
 
-.sidebar-right-fixed time {
+.sidebar-right-fixed time, 
+.content-left-fixed time {
     font-size: 18px;
     line-height: 25px;
     color: #e9414d;
@@ -728,11 +758,18 @@ article img {
     padding-left: 12px;
 }
 
-.sidebar-right-fixed .description {
+.sidebar-right-fixed .description, 
+.content-left-fixed .description {
     font-size: 18px;
     line-height: 28px;
     padding-left: 12px;
     margin: 20px 0 35px;
+}
+
+.content-left-fixed h2, 
+.content-left-fixed time, 
+.content-left-fixed .description {
+    padding-left: 0;
 }
 
 .sidebar-right-fixed .portfolio-item {
@@ -740,10 +777,6 @@ article img {
     margin-left: 11px;
     margin-bottom: 15px;
     box-shadow: 0 0px 21px #e4e4e4;
-}
-
-.sidebar-right-fixed .portfolio-item .button-order {
-    font-size: 18px;
 }
 
 .sidebar-right-fixed .portfolio-item {
@@ -754,9 +787,18 @@ article img {
     display: block;
 }
 
+#blog-page .sidebar-right-fixed h2 {
+    margin-bottom: 0;
+}
+
+#blog-page .sidebar-right-fixed .description {
+    margin-top: 10px;
+}
+
 #blog-page .sidebar-right-fixed h2,
 #blog-page .sidebar-right-fixed .description {
     padding-left: 0;
+    font-weight: 300;
 }
 
 #blog-page .sidebar-right-fixed {
@@ -799,6 +841,7 @@ article img {
     font-size: 24px;
     margin: 0 0 30px 0;
     line-height: 34px;
+    font-weight: 300;
 }
 
 #clients-info .timeline p {
@@ -860,8 +903,9 @@ article img {
 
 .form-control {
     border: none;
-    border-bottom: 1px solid #F5F5F6;
+    border-bottom: 3px solid #F5F5F6;
     font-size: 18px;
+    border-radius: 0 !important;
 }
 
 .form-control:focus {
@@ -886,17 +930,22 @@ article img {
     vertical-align: middle;
 }
 
-.contact-form.contact-form-full {
-    width: 100%;
-}
-
 .contact-form.contact-form-full #feedback-text {
-    margin-top: 0;
-    height: 443px;
+    margin-top: 16px;
+    height: 200px;
 }
 
 .contact-form.contact-form-full .form-sub-title {
     margin-bottom: 45px;
+}
+
+#clients-info.clients-page-form-full .portfolio-examples:after {
+    display: none;
+}
+
+#clients-info.clients-page-form-full .portfolio-item.item-full {
+    margin-left: 35px !important;
+    min-height: 891px;
 }
 
 .contact-form {
@@ -928,7 +977,7 @@ article img {
 }
 
 #map-canvas {
-    height: 335px;
+    height: 285px;
 }
 
 .address-block {
@@ -1121,6 +1170,20 @@ footer .social-icon {
     width: 30px;
     float: left;
     margin-right: 15px;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+}
+
+footer a.social-icon:hover img {
+    opacity: 0.8;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    transition: all ease 0.5s;
 }
 
 footer .phone-number {
@@ -1133,6 +1196,11 @@ footer .phone-number {
     -o-transition: all ease 0.5s;
     -ms-transition: all ease 0.5s;
     transition: all ease 0.5s;
+}
+
+.page-block .sidebar-right-fixed .title {
+    font-size: 24px;
+    margin-bottom: 16px;
 }
 
 @media (max-width: 1199px) {
@@ -1156,7 +1224,7 @@ footer .phone-number {
     }
 
     .page-block .sidebar-right-fixed .title {
-        font-size: 29px;
+        font-size: 21px;
     }
 
     .sidebar-right-fixed h2,
@@ -1219,6 +1287,7 @@ footer .phone-number {
 
     .contact-form.contact-form-full {
         margin-bottom: 40px;
+        padding: 40px 16px;
     }
 
     .portfolio-examples,
@@ -1329,7 +1398,7 @@ footer .phone-number {
         margin: 0 auto 60px !important;
     }
 
-    .sidebar-right-fixed .project-info-page-description {
+    .content-left-fixed .project-info-page-description {
         max-width: 520px;
         margin: 0 auto;
     }
@@ -1373,6 +1442,29 @@ footer .phone-number {
         display: block;
         text-align: center;
         margin-top: 20px;
+    }
+
+    #clients-info.clients-page-form-full .portfolio-item.item-full {
+        margin-left: 0 !important;
+        margin-bottom: 40px !important;
+    }
+
+    #clients-info.clients-page-form-full .portfolio-item.item-full .title, .address-block .address-block-title {
+        font-family: 'rubik_medium';
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .contact-form {
+        padding: 40px 16px;
+    }
+    
+    .graphic {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 
@@ -1437,6 +1529,26 @@ footer .phone-number {
 
     .timeline > li:nth-child(1) {
         margin-top: 0 !important;
+    }
+
+    #clients-info .timeline .number {
+        position: unset;
+    }
+
+    #clients-info .timeline-body {
+        padding-left: 0;
+    }
+
+    #main-menu {
+        min-height: 60px;
+    }
+
+    #main-menu .navbar-brand {
+        height: 60px;
+    }
+
+    .navbar-brand img {
+        height: 30px;
     }
 }
 
@@ -1575,6 +1687,19 @@ footer .phone-number {
     #main-works.page-block .sub-title, #clients-info.page-block .sub-title {
         margin-bottom: 60px;
     }
+
+    #owner-info .description-media .media img {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    #owner-info .description-media .media {
+        padding-left: 0;
+    }
+
+    #owner-info .description-media .media:after {
+        display: none;
+    }
 }
 
 @media (min-width: 637px) {
@@ -1608,12 +1733,6 @@ footer .phone-number {
 
     #owner-info .owner-data .owner-data-vertical {
         display: block;
-        padding-left: 34px;
-    }
-
-    #owner-info .description-media .media img {
-        margin-bottom: 0;
-        margin-top: 30px;
     }
 
     #owner-info .description-media .media:after {

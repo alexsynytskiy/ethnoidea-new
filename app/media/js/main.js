@@ -26,6 +26,12 @@ $(document).ready(function () {
         slideMargin: 0
     });
 
+    $("#contact-page-form-order").click(function() {
+        $('html, body').animate({
+            scrollTop: $($(this).attr('href')).offset().top - 150
+        }, 1000);
+    });
+
     $(window).scroll(function () {
         if ($(window).width() > 991) {
             var classToAdd = 'sidebar-right-fixed-bottom-big';

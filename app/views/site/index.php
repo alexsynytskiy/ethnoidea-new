@@ -6,7 +6,6 @@
 /* @var $block1 \yii\easyii\modules\page\api\PageObject */
 /* @var $block2 \yii\easyii\modules\page\api\PageObject */
 /* @var $block3 \yii\easyii\modules\page\api\PageObject */
-/* @var $block4 \yii\easyii\modules\page\api\PageObject */
 /* @var $block5 \yii\easyii\modules\page\api\PageObject */
 
 $asset = \app\assets\AppAsset::register($this);
@@ -40,8 +39,6 @@ $baseUrl = $asset->baseUrl;
 </section>
 
 <?= str_replace('{baseUrl}', $baseUrl, $block3->text) ?>
-
-<?= $block4->text ?>
 
 <?php if(count($partners)): ?>
     <section class="padding page-block partners-main" id="partners">
